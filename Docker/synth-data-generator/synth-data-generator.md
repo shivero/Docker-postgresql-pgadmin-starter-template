@@ -1,0 +1,1 @@
+.\synth-windows-latest-x86_64.exe generate models/ --size 20000 --to postgres://admin:root@localhost:5432/myapp_dev --seed 9834758957
