@@ -13,25 +13,13 @@
         "name": {
             "type": "string",
             "faker": {
-                "generator": "company_name"
+                "generator": "name"
             }
         },
-        "street": {
+        "description": {
             "type": "string",
             "faker": {
-                "generator": "street_name"
-            }
-        },
-        "city": {
-            "type": "string",
-            "faker": {
-                "generator": "city_name"
-            }
-        },
-        "zipcode": {
-            "type": "string",
-            "faker": {
-                "generator": "zip_code"
+                "generator": "catch_phrase"
             }
         }
     }
