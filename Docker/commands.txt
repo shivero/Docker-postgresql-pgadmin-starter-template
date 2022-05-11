@@ -1,2 +1,0 @@
-Remove all containers,images,volumes
-docker system prune -a --volumes

@@ -18,6 +18,8 @@ services:
     restart: always
 
   pgAdmin:
+    depends_on:
+      - 'db'
     container_name: pgadmin4_container
     image: dpage/pgadmin4
     restart: always
