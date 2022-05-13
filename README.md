@@ -37,6 +37,19 @@ It will automatically start 2 containers defined in `docker-compose.yml` file - 
 3. `local_pgdata` - in this directory you can put your own files that will be copied to PostgreSQL container.
 4. `starting-scripts` - here you can see sample SQL script that speed up development, for example: creating tables, inserting data etc.
 
+## 🚀 Extra - auto generate tables data with Synth
+Often after you create database you will probably want to insert some data into it.
+You can use Synth for that - synth is an open source tool that will generate data based on models you define (tables schema).
+
+First, download [Synth](https://www.getsynth.com/) executable to run it from terminal.
+Then define models based on your tables - model fields must match with database fields. 
+
+> You can find sample file in `Docker\synth-data-generator\models\companies.json` - it's model for "companies" table with 3 columns - id (SQL datatype: INT), name (SQL datatype: VARCHAR), description (SQL datatype VARCHAR)
+
+With model prepared, you can run Synth command to generate data directly into SQL tables (this scripts generates 20 000 records):
+```
+.\synth-windows-latest-x86_64.exe generate models/ --size 20000 --to postgres://admin_account:admin_account@localhost:5432/myapp_dev
+```
 
 ## License 
 This project is licensed under MIT license.
